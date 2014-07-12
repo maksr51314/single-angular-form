@@ -36,6 +36,9 @@ angular.module('myApp.controllers', [])
             }
         };
 
+        var templateModel = {
+            date: ''
+        }
 
         function MyCtrl1() {
             $scope.tabs = [
@@ -44,6 +47,13 @@ angular.module('myApp.controllers', [])
                 { title:'Review and submit', content:'Dynamic content 2', context: 'review'},
             ];
 
+            $scope.model = templateModel;
+
+            $scope.dateOptions = {
+                changeYear: true,
+                changeMonth: true,
+                yearRange: '1900:-0'
+            };
 
         }
 
