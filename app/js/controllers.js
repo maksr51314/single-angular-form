@@ -39,8 +39,9 @@ angular.module('myApp.controllers', [])
 
         function MyCtrl1() {
             $scope.tabs = [
-                { title:'Dynamic Title 1', content:'Dynamic content 1' },
-                { title:'Dynamic Title 2', content:'Dynamic content 2' }
+                { title:'General infomation', content:'Dynamic content 1', context: 'general'},
+                { title:'Corrective Actions ', content:'Dynamic content 2', context: 'actions'},
+                { title:'Review and submit', content:'Dynamic content 2', context: 'review'},
             ];
 
 
