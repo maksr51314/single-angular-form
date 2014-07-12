@@ -13,6 +13,7 @@
     "html5-boilerplate": "~4.3.0",
     "angular-bootstrap": "0.11.0",
     "jquery": "latest",
-    "angular-ui-date": "latest"
+    "angular-ui-date": "latest",
+    "angular-ui-utils": "latest"
   }
 }

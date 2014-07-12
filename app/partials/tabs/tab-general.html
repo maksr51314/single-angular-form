@@ -1,13 +1,15 @@
 <div class="spacer"></div>
 
-<form class="form-horizontal">
+<div class="form-horizontal" ng-form="GeneralForm">
 
     <div class="form-group row">
         <label for="inputEmail" class="control-label col-xs-2 col-sm-2 col-md-3 col-lg-2">Date and time</label>
         <div class="col-xs-8 col-sm-4 col-md-3 col-lg-3">
             <input class="form-control" id="inputEmail" placeholder="Email"
                    ui-date ui-date-format="DD, d MM, yy"
-                    ng-model="model.date">
+                   name="date"
+                   ng-model="model.date"
+                   required>
         </div>
     </div>
 
@@ -15,12 +17,12 @@
     <div class="form-group row">
         <label for="inputEmail" class="control-label col-xs-2 col-sm-2 col-md-3 col-lg-2">Reported By: </label>
         <div class="col-xs-8 col-sm-4 col-md-3 col-lg-3">
-            <input class="form-control" id="inputEmail" placeholder="Email">
+            <input class="form-control" id="inputEmail" placeholder="Email" name="reportedBy" required>
         </div>
 
         <label for="inputEmail" class="control-label col-xs-2 col-sm-2 col-md-3 col-lg-2">Wall number</label>
         <div class="col-xs-8 col-sm-4 col-md-3 col-lg-3">
-            <input class="form-control" id="inputEmail" placeholder="Email">
+            <input class="form-control" id="inputEmail" placeholder="Email" required>
         </div>
     </div>
 
@@ -69,4 +71,4 @@
 
 
 
-</form>
+</div>
