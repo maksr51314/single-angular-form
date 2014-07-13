@@ -2,10 +2,10 @@
 
 <div class="form-horizontal" ng-form="GeneralForm">
 
-    <div class="form-group row">
-        <label for="inputEmail" class="control-label col-xs-2 col-sm-2 col-md-3 col-lg-2">Date and time</label>
+    <div class="form-group row" ng-class="{'has-error': GeneralForm.date.$invalid}">
+        <label for="inputEmail" class="control-label col-xs-2 col-sm-2 col-md-3 col-lg-2">Date</label>
         <div class="col-xs-8 col-sm-4 col-md-3 col-lg-3">
-            <input class="form-control" id="inputEmail" placeholder="Email"
+            <input class="form-control" id="inputEmail" placeholder="Date"
                    ui-date ui-date-format="DD, d MM, yy"
                    name="date"
                    ng-model="model.date"
@@ -13,16 +13,27 @@
         </div>
     </div>
 
+    <div class="form-group row" ng-class="{'has-error': GeneralForm.time.$invalid}">
+        <label for="inputEmail" class="control-label col-xs-2 col-sm-2 col-md-3 col-lg-2
+                                        marginTopTimeLabel">Time</label>
+        <div class="col-xs-8 col-sm-4 col-md-3 col-lg-3">
+            <timepicker name="time" ng-model="model.time" hour-step="1" minute-step="15" show-meridian="true"></timepicker>
+        </div>
+    </div>
 
     <div class="form-group row">
         <label for="inputEmail" class="control-label col-xs-2 col-sm-2 col-md-3 col-lg-2">Reported By: </label>
-        <div class="col-xs-8 col-sm-4 col-md-3 col-lg-3">
-            <input class="form-control" id="inputEmail" placeholder="Email" name="reportedBy" required>
+        <div class="col-xs-8 col-sm-4 col-md-3 col-lg-3" ng-class="{'has-error': GeneralForm.reportedBy.$invalid}">
+            <select class="form-control" name="reportedBy" ng-options="color.name for color in optionCompanies" ng-model="model.reortedBy" required=""></select>
         </div>
 
         <label for="inputEmail" class="control-label col-xs-2 col-sm-2 col-md-3 col-lg-2">Wall number</label>
-        <div class="col-xs-8 col-sm-4 col-md-3 col-lg-3">
-            <input class="form-control" id="inputEmail" placeholder="Email" required>
+        <div class="col-xs-8 col-sm-4 col-md-3 col-lg-3" ng-class="{'has-error': GeneralForm.wallNum.$invalid}">
+            <select class="form-control" id="inputEmail" placeholder="Email"
+                   name="wallNum"
+                   ng-model="model.wellNum"
+                   required=""
+                   ng-options="wellNum for wellNum in optionsWellNum"></select>
         </div>
     </div>
 
@@ -34,19 +45,25 @@
 
         <label for="inputEmail" class="control-label col-xs-2 col-sm-2 col-md-3 col-lg-2">Region</label>
         <div class="col-xs-8 col-sm-4 col-md-3 col-lg-3">
-            <input class="form-control" id="inputEmail" placeholder="Email">
+            <input class="form-control" id="inputEmail" placeholder="Email"
+                    ng-model="model.region" disabled>
         </div>
     </div>
 
     <div class="form-group row">
         <label for="inputEmail" class="control-label col-xs-2 col-sm-2 col-md-3 col-lg-2">Contact number</label>
         <div class="col-xs-8 col-sm-4 col-md-3 col-lg-3">
-            <input class="form-control" id="inputEmail" placeholder="Email">
+            <input class="form-control" id="inputEmail"
+                   ng-model="model.contactNum"
+
+
+                   placeholder="Email">
         </div>
 
         <label for="inputEmail" class="control-label col-xs-2 col-sm-2 col-md-3 col-lg-2">Field Office</label>
         <div class="col-xs-8 col-sm-4 col-md-3 col-lg-3">
-            <input class="form-control" id="inputEmail" placeholder="Email">
+            <input class="form-control" id="inputEmail" placeholder="Email"
+                    ng-model="model.fieldOffice" disabled>
         </div>
     </div>
 
@@ -56,9 +73,10 @@
             <input class="form-control" id="inputEmail" placeholder="Email">
         </div>
 
-        <label for="inputEmail" class="control-label col-xs-2 col-sm-2 col-md-3 col-lg-2">Severity</label>
+        <label for="inputEmail" class="control-label col-xs-2 col-sm-2 col-md-3 col-lg-2">State</label>
         <div class="col-xs-8 col-sm-4 col-md-3 col-lg-3">
-            <input class="form-control" id="inputEmail" placeholder="Email">
+            <input class="form-control" id="inputEmail" placeholder="Email"
+                    ng-model="model.state" disabled>
         </div>
     </div>
 

@@ -37,8 +37,27 @@ angular.module('myApp.controllers', [])
         };
 
         var templateModel = {
-            date: ''
-        }
+            date: '',
+            wallNum: 12345678901
+        };
+
+        var WellNum = {
+            'Well-01': {
+                'region': 'South',
+                'state': 'Oklahoma',
+                'fieldOffice': 'Ringwood'
+            },
+            'Well-02': {
+                'region': 'South',
+                'state': 'Montana',
+                'fieldOffice': 'Sidney'
+            },
+            'Well-03': {
+                'region': 'South',
+                'state': 'North Dakota',
+                'fieldOffice': 'Tioga'
+            }
+        };
 
         function MyCtrl1() {
             $scope.tabs = [
@@ -55,7 +74,24 @@ angular.module('myApp.controllers', [])
                 yearRange: '1900:-0'
             };
 
+            $scope.optionsWellNum = _.keys(WellNum);
+
+            $scope.optionCompanies = [
+                {name: 'someOneCompany'},
+                {name: 'someTwoCompany'}
+            ];
+
+            this.setWatchers_();
         }
+
+        MyCtrl1.prototype.setWatchers_ = function() {
+            var self = this;
+            $scope.$watch('model.wellNum', self.watchWellNum_);
+        };
+
+        MyCtrl1.prototype.watchWellNum_ = function(val) {
+            _.extend($scope.model, WellNum[val]);
+        };
 
         return new MyCtrl1();
 
