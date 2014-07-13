@@ -38,7 +38,8 @@ angular.module('myApp.controllers', [])
 
         var templateModel = {
             date: '',
-            wallNum: 12345678901
+            wallNum: '',
+            contactNum: '123-456-7890'
         };
 
         var WellNum = {

@@ -24,7 +24,7 @@
     <div class="form-group row">
         <label for="inputEmail" class="control-label col-xs-2 col-sm-2 col-md-3 col-lg-2">Reported By: </label>
         <div class="col-xs-8 col-sm-4 col-md-3 col-lg-3" ng-class="{'has-error': GeneralForm.reportedBy.$invalid}">
-            <select class="form-control" name="reportedBy" ng-options="color.name for color in optionCompanies" ng-model="model.reortedBy" required=""></select>
+            <input class="form-control" id="inputEmail" placeholder="Email" ng-model="model.reportedBy" required="" name="reportedBy">
         </div>
 
         <label for="inputEmail" class="control-label col-xs-2 col-sm-2 col-md-3 col-lg-2">Wall number</label>
@@ -37,10 +37,10 @@
         </div>
     </div>
 
-    <div class="form-group row">
+    <div class="form-group row" >
         <label for="inputEmail" class="control-label col-xs-2 col-sm-2 col-md-3 col-lg-2">Company of Reporter</label>
-        <div class="col-xs-8 col-sm-4 col-md-3 col-lg-3">
-            <input class="form-control" id="inputEmail" placeholder="Email">
+        <div class="col-xs-8 col-sm-4 col-md-3 col-lg-3" ng-class="{'has-error': GeneralForm.companyOfReporter.$invalid}">
+            <select class="form-control" name="companyOfReporter" ng-options="color.name for color in optionCompanies" ng-model="model.companyOfReporter" required=""></select>
         </div>
 
         <label for="inputEmail" class="control-label col-xs-2 col-sm-2 col-md-3 col-lg-2">Region</label>
@@ -52,11 +52,12 @@
 
     <div class="form-group row">
         <label for="inputEmail" class="control-label col-xs-2 col-sm-2 col-md-3 col-lg-2">Contact number</label>
-        <div class="col-xs-8 col-sm-4 col-md-3 col-lg-3">
+        <div class="col-xs-8 col-sm-4 col-md-3 col-lg-3" ng-class="{'has-error': GeneralForm.contactNum.$invalid}">
             <input class="form-control" id="inputEmail"
                    ng-model="model.contactNum"
-
-
+                    ng-pattern="/^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$/"
+                    required=""
+                    name="contactNum"
                    placeholder="Email">
         </div>
 
@@ -83,7 +84,7 @@
     <div class="form-group row">
         <label for="inputEmail" class="control-label col-xs-2 col-sm-2 col-md-3 col-lg-2">Hight Level Description</label>
         <div class="col-xs-8 col-sm-4 col-md-3 col-lg-3">
-            <input class="form-control" id="inputEmail" placeholder="Email">
+            <textarea class="form-control" rows="4" cols="50" ng-model="model.description"></textarea>
         </div>
     </div>
 
